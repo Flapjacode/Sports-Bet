@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: betting-simulator-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ODDS_API_KEY
+        value: 1837d40f7121f88248d0ab4c07d33357
+      - key: FRONTEND_URL
+        sync: false
+    autoDeploy: true
